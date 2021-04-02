@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+
+    
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+        body{
+            --color-error:tomato;
+            --color-success:lightgreen;
+
+           
+        }
+        .branding{
+            width: 300px;
+            margin-top: 10px;
+        }
+        .branding h1{
+            width: 100%;
+        }
+        .contain{
+            margin:0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            background: url(images/2.jpg);
+            background-size: cover;
+        }
+
+        .cont{
+            width: 400px;
+            max-width: 400px;
+            margin: 1rem;
+            padding: 2rem;
+            box-shadow: 0 0 40px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            background:white
+        }
+        .cont,
+        .form__input,
+        .form__button{
+            font:500 1rem 'Sawarabi Gothic', sans-serif;
+
+        }
+        .form__title{
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .form--hidden{
+            display: none;
+        }
+        .form> *:first-child{
+            margin-top: 0;
+        }
+        .form> *:last-child{
+            margin-bottom:0;
+        }
+        .form__message{
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .form__message--success{
+            color:var(--color-success)
+        }
+        .form__message--error{
+            color:var(--color-error)
+        }
+
+        .form__input-group{
+            margin-bottom: 1rem;
+
+        }
+        .form__input{
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #dddd;
+            outline: none;
+            background: #eeee;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .form__input:focus{
+            border-color:  rgb(141, 216, 241);
+            background: #ffff;
+        }
+
+        .form__input--error{
+            color:var(--color-error);
+            border-color: var(--color-error);
+        }
+        .form__input-error-message{
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--color-error);
+        }
+
+        .form__button{
+            width: 100%;
+            padding: 1rem 2rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #ffff;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            background:rgb(141, 216, 241,0.85) ;
+        }
+        .form__button:hover{
+            background: rgb(141, 216, 241);
+        }
+        .form__button:active{
+            transform: scale(0.98);
+        }
+        .form__text{
+            text-align: center;
+        }
+        .form__link{
+            color: #53b7d8 ;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .form__link:hover{
+            text-decoration: underline;
+        }
+
+
+        /* header part */
+        .container{
+
+width: 80%;
+margin: auto;
+overflow: hidden;
+}
+
+.dark{
+padding: 15px;
+background: ;
+color: white;
+margin-top: 10px;
+margin-bottom:10px ;
+}
+
+header{
+background :rgba(141, 216, 241, 0.6);
+color: white;
+padding-top: 20px;
+padding-bottom: 20px;
+min-height: 70px;
+border-bottom:#53b7d8 3px solid;
+
+}
+
+header a{
+
+color: white;
+text-decoration: none;
+
+text-transform: uppercase;
+font-size: 16px;
+
+}
+
+ul{
+ margin: 0;
+ padding: 0;
+}
+
+header li{
+
+float: left;
+display: inline;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+header .branding{
+
+float: left;
+margin-left: 10px;
+
+
+}
+
+header nav{
+float:  right;
+margin-top: 10px;
+
+}
+
+header .container{
+display: flex;
+justify-content: space-between;
+}
+
+header .highlight, header .current a{
+
+color:#53b7d8;
+font-weight: bold;
+}
+
+header a:hover{
+
+color: #cccccc;
+font-weight: bold;
+
+}
+
+.hamburger{
+display: none;
+font-size: 30px;
+background-color: transparent;
+border: 0;
+color: white;
+cursor: pointer;
+}
+
+.hamburger:focus{
+outline: none;
+}
+    </style>
+     
+</head>
+<body>
+
+    
+    <header>
+        <div class="container">
+    
+      
+          <div class="branding">
+            <h1><span class="highlight">  Dental</span> Health</h1>
+          </div>
+          <nav>
+            <button class="hamburger" id="hamburger">
+              <i class="fa fa-bars"></i> 
+            </button>
+            <ul  id="nav-ul">
+             
+                <li > <a href="index.html">Home</a></li>
+                <li> <a href="about.html">About</a></li>
+                <li> <a href="services.html">Services</a></li>
+                <li class="current"> <a href="login.html">Sign Up</a></li>
+              
+            </ul>
+          </nav>
+        
+    
+        </div>
+      </header>
+      <div class="contain">
+        <div class="cont">
+            <form class="form"id="login">
+                <h1 class="form__title">Login</h1>
+                <div class="form__message form__message--error"></div>
+                <div class="form__input-group">
+                    <input type="text" class="form__input" autofocus placeholder="Username or Email">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <div class="form__input-group">
+                    <input type="password" class="form__input" autofocus placeholder="password">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <button class="form__button" type="submit">Continue</button>
+                <p class="form__text">
+                    <a href="#" class="form__link">Forgot your password?</a>
+                </p>
+                <p class="form__text">
+                    <a  class="form__link"  id="linkCreateAccount" href="#">Don't have an account? Create account</a>
+                </p>
+            </form>
+            <form class="form form--hidden" id="createAccount">
+                <h1 class="form__title">Create Account</h1>
+                <div class="form__message form__message--error"></div>
+                <div class="form__input-group">
+                    <input type="text"  class="form__input" id="signUpUsername" autofocus placeholder="Username">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <div class="form__input-group">
+                    <input type="text" class="form__input" id="signUpEmail" autofocus placeholder="Email Address">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <div class="form__input-group">
+                    <input type="password" class="form__input" autofocus placeholder="password">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <div class="form__input-group">
+                    <input type="password" class="form__input" id="signUpPassword" autofocus placeholder="Confirm password">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <button class="form__button" id="addData" >Continue</button>
+                
+                <p class="form__text">
+                    <a  class="form__link"  id="linkLogin" href="#">Already have an account? Sign in</a>
+                </p>
+            </form>
+        </div>
+      </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
